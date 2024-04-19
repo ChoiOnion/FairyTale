@@ -1,0 +1,46 @@
+
+.ibm-plex-sans-kr-light {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-sans-kr-regular {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-sans-kr-medium {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-sans-kr-semibold {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-sans-kr-bold {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.greenbtn {
+  background-color: #026873; 
+  color: white;
+}
+
+.green{
+  color: #026873; 
+}
+
+body{
+	font-family:"IBM Plex Sans KR", sans-serif;
+	font-size:20px;
+	font-weight:400;
+	background-color: #FCFBED; 
+}

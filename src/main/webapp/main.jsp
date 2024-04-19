@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8"> 
     <title>FairyTale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+     body{
+     background-color:#026873;
+     }
+     </style>
 </head>
 <body>
     <div>
         <!-- 사용자 ID 표시 -->
-        <div style="position: fixed; top: 10px; right: 10px;">
+        <div style="position: fixed; top: 10px; right: 10px; color:#c3bbb6;">
             <% String userId = (String) session.getAttribute("id"); %>
             <p>Welcome, <%= userId %></p>
         </div>
     </div>
     
-    <h1>Main Page</h1>
+    <p style="color:#FCFBED; font-size:40px; font-weight:700;">Our Services</p>
+    <p style="color:#c3bbb6;">Have a good time with Fairy Tales</p>
     
     <!-- 세 개의 버튼 -->
     <div>
