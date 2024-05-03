@@ -11,15 +11,15 @@
 </head>
  
 <body>   
-	<h1 style="font-size:40px; font-weight:700">Get Started Now</h1>
+	<h1 style="font-size:40px; font-weight:700">회원가입해서 시작하세요.</h1>
     <form action="joinAction.jsp" method="post">
         <label for="ID" class="green">ID:</label><br>
         <input type="text" id="id" name="id" placeholder="Enter your ID" required>
         <span id="idError" style="color:red;"></span>
         <br>
-        <label for="pwd" class="green">Password:</label><br>
+        <label for="pwd" class="green">비밀번호:</label><br>
         <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br>
-        <label for="name" class="green">Name:</label><br>
+        <label for="name" class="green">이름:</label><br>
         <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
         <input type="submit" value="Join" class="greenbtn">
     </form>

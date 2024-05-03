@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
-<%@ page import="javax.servlet.http.*" %>
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -29,7 +28,7 @@
         
         String id = request.getParameter("id");
         String pwd = request.getParameter("pwd");
-        
+        String username = "";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -43,11 +42,14 @@
             pstmt.setString(1, id);
             pstmt.setString(2, pwd);
             rs = pstmt.executeQuery();
-            
             //입력된 아이디와 비밀번호가 데이터베이스에 있는지 확인
             if(rs.next()) {
                 HttpSession userSession  = request.getSession();
                 userSession .setAttribute("id", id);
+                
+                username = rs.getString("name");
+                userSession.setAttribute("username", username);
+                
          	   out.println("<script>Login();</script>");
             } else {
                 //로그인 실패 메시지 출력

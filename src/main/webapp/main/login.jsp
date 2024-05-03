@@ -13,13 +13,13 @@
 </head>
  
 <body>
-	<h1 style="font-size:40px; font-weight:700">Welcome back!</h1>
+	<h1 style="font-size:40px; font-weight:700">어서오세요!</h1>
 	<form action="loginAction.jsp" method="post">
-        <label for="id" class="green">ID:</label><br>
+        <label for="id" class="green">아이디:</label><br>
         <input type="text" id="id" name="id" placeholder="Enter your ID" required><br>
-        <label for="pwd" class="green">Password:</label><br>
+        <label for="pwd" class="green">비밀번호:</label><br>
         <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br><br>
-        <input type="submit" value="Login" class="greenbtn">
+        <input type="submit" value="로그인" class="greenbtn">
     </form>
     <p style="font-size:15px; font-weight:300;">계정이 없으신가요? <a href="join.jsp">회원 가입</a></p>
 </body>
