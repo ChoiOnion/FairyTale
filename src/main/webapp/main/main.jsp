@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8"> 
     <title>FairyTale</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+    @font-face {
+    font-family: 'TTHakgyoansimRikodeoR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimRikodeoR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
      body{ 
+    	font-family: 'TTHakgyoansimRikodeoR';
      	background-image: url('bgImage.png');
         background-size: cover;
         background-position: center; 
