@@ -37,7 +37,7 @@
     <div>
         <button onclick="location.href='fairyTale.jsp'">동화</button>
         <button onclick="location.href='game.jsp'">게임</button>
-        <button onclick="location.href='story.jsp'">스토리</button>
+		<button onclick="location.href='../simulator/index.html'">스토리</button>
     </div>
     
     <%-- 세션이 없으면 로그인 페이지로 이동 --%>
