@@ -23,9 +23,10 @@
 	<form action="loginAction.jsp" method="post">
         <label for="id" class="green">아이디:</label><br>
         <input type="text" id="id" name="id" placeholder="Enter your ID" required><br>
+        <br>
         <label for="pwd" class="green">비밀번호:</label><br>
         <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br><br>
-        <input type="submit" value="로그인" class="greenbtn">
+        <button class="transparent-button">로그인</button>
     </form>
     <p style="font-size:15px; font-weight:300;">계정이 없으신가요? <a href="join.jsp">회원 가입</a></p>
 </body>

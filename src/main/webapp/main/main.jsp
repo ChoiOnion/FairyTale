@@ -27,18 +27,20 @@
         <div style="position: fixed; top: 10px; right: 10px; color:#615B57;">
             <% String username = (String) session.getAttribute("username"); %>
             <p>어서오세요, <%= username %> 님.</p>
-            <button onclick="location.href='logoutAction.jsp'">로그아웃</button>
+            <button class="transparent-button" style="float:left;
+            padding: 8px 16px; font-size: 12px;">게임</button>
+            <button class="transparent-button" style="float: right;
+            padding: 8px 16px; font-size: 12px;" onclick="location.href='logoutAction.jsp'" >로그아웃</button>
         </div>
     </div>
     
     <p style="color:#615B57; font-size:40px; font-weight:700;">FairyTale</p>
     
-    <!-- 세 개의 버튼 -->
-    <div>
-        <button onclick="location.href='fairyTale.jsp'">동화</button>
-        <button onclick="location.href='game.jsp'">게임</button>
-		<button onclick="location.href='../simulator/index.html'">스토리</button>
-    </div>
+
+    <button style="position: fixed; top: 45%; left: calc(50% - 170px);"
+        onclick="location.href='../intoStory/storyList.jsp'">동화</button>
+	<button style="position: fixed; top: 45%; right: calc(50% - 170px);"
+        onclick="location.href='../simulator/index.html'">스토리</button>
     
     <%-- 세션이 없으면 로그인 페이지로 이동 --%>
     <% if(session.getAttribute("id") == null) { %>

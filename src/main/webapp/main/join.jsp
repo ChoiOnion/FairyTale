@@ -24,11 +24,13 @@
         <input type="text" id="id" name="id" placeholder="Enter your ID" required>
         <span id="idError" style="color:red;"></span>
         <br>
+        <br>
         <label for="pwd" class="green">비밀번호:</label><br>
         <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br>
+        <br>
         <label for="name" class="green">이름:</label><br>
         <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
-        <input type="submit" value="Join" class="greenbtn">
+        <button class="transparent-button">회원가입</button>
     </form>
 
 
