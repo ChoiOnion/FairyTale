@@ -1,0 +1,107 @@
+body {
+	background: #FCFBED;
+	font-family: 'Montserrat', sans-serif;
+}
+.title{
+  font-family: 'Jost';
+  font-weight: 600;
+  font-size: 2.2vw;
+  line-height: 1.4;
+  text-transform: capitalize;
+  text-align: center;
+  color: #024059;
+  margin-top: 5%;
+}
+.subtitle{
+  margin-top: 0.8%;
+  font-family: 'Poppins';
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.0vw;
+  color: #B0A47D;
+}
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	margin: 6% auto 0;
+	margin-top: 4%;
+}
+.single-card {
+	position: relative;
+	width: 280px;
+	height: 400px;
+	margin: 15px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+	transition: box-shadow 0.3s ease;
+	overflow: hidden;
+	background: #026873;
+	border-radius: 15px;
+	transition: all 0.8s ease-in-out;
+}
+.single-card:hover {
+	transform: translateY(-10px);
+}
+.img-area {
+	position: relative;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+}
+.img-area img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+.img-area:hover img {
+	transform: scale(1.1);
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(140, 205, 212, 0.8);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+.single-card:hover .overlay {
+	opacity: 1;
+}
+.Following, .restart {
+	background-color: rgba(255, 255, 255, 0.75);
+	color: #333;
+	padding: 10px 15px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	margin-bottom: 10px;
+	border: none;
+}
+.Following:hover, .restart:hover {
+	background-color: rgb(242, 147, 123, 0.8);
+	color: #fff;
+	border: none;
+}
+.info {
+	padding: 10px;
+	text-align: center;
+	color: rgb(242, 242, 242);
+}
+.info h3 {
+	margin: 15px 0 10px;
+	font-size: 25px;
+	font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+}
