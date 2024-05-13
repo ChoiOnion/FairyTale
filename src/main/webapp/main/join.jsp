@@ -11,16 +11,25 @@
     font-weight: normal;
     font-style: normal;
 	}
-     body{ 
-    	font-family: 'TTHakgyoansimRikodeoR';
-    }
+ body, html {
+    font-family: 'TTHakgyoansimRikodeoR';
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .join {
+            text-align: center;
+        }
     </style>
 </head>
  
 <body>   
+	<div class="join">
 	<h1 style="font-size:40px; font-weight:700">회원가입해서 시작하세요.</h1>
     <form action="joinAction.jsp" method="post">
-        <label for="ID" class="green">ID:</label><br>
+        <label for="ID" class="green">아이디:</label><br>
         <input type="text" id="id" name="id" placeholder="Enter your ID" required>
         <span id="idError" style="color:red;"></span>
         <br>
@@ -32,6 +41,7 @@
         <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
         <button class="transparent-button">회원가입</button>
     </form>
+    </div>
 
 
     <script>

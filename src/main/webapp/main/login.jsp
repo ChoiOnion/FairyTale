@@ -12,13 +12,22 @@
     font-weight: normal;
     font-style: normal;
 	}
-     body{ 
-    	font-family: 'TTHakgyoansimRikodeoR';
-    }
+    body, html {
+    font-family: 'TTHakgyoansimRikodeoR';
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login {
+            text-align: center;
+        }
     </style>
 </head>
  
 <body>
+	<div class="login">
 	<h1 style="font-size:40px; font-weight:700">어서오세요!</h1>
 	<form action="loginAction.jsp" method="post">
         <label for="id" class="green">아이디:</label><br>
@@ -29,5 +38,6 @@
         <button class="transparent-button">로그인</button>
     </form>
     <p style="font-size:15px; font-weight:300;">계정이 없으신가요? <a href="join.jsp">회원 가입</a></p>
+    </div>
 </body>
 </html>
