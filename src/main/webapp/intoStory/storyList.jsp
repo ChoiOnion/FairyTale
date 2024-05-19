@@ -20,6 +20,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Handlee&family=Poppins:wght@100&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sunflower:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+    	function move(title){
+    			var info = title;
+    			location.href="typing.jsp?title=" + title;
+    	}
+    </script>
 </head>
 <body>
   <div class="title"> Going into Fairy Tale</div>
@@ -40,17 +46,18 @@
 	ResultSet result = psmt.executeQuery();
 	
 	while(result.next()){
+		String title = result.getString("title");
 %>
 	<div class="single-card">
       <div class="img-area">
-        <img src="<%= result.getString("title")+".jpg" %>" alt="">
+        <img src="<%= title+".jpg" %>" alt="">
         <div class="overlay">
-          <button class="Following">Following</button>
+          <button class="Following" onclick = 'move("<%=title%>")'>Following</button>
           <button class="restart">restart</button>
         </div>
       </div>
       <div class="info">
-        <h3><%= result.getString("title")%></h3>
+        <h3><%= title%></h3>
         <p>책 소개를 작성하세요.</p>
       </div>
     </div>
