@@ -30,12 +30,12 @@
 	<h1 style="font-size:40px; font-weight:700">회원가입해서 시작하세요.</h1>
     <form action="joinAction.jsp" method="post">
         <label for="ID" class="green">아이디:</label><br>
-        <input type="text" id="id" name="id" placeholder="Enter your ID" required>
+        <input type="text" id="id" name="id" placeholder="Enter your ID" required><br>
         <span id="idError" style="color:red;"></span>
         <br>
         <br>
         <label for="pwd" class="green">비밀번호:</label><br>
-        <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br>
+        <input type="password" id="pwd" name="pwd" placeholder="Enter your password" required><br><br>
         <br>
         <label for="name" class="green">이름:</label><br>
         <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>

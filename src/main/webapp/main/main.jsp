@@ -37,10 +37,16 @@
     <p style="color:#615B57; font-size:40px; font-weight:700;">FairyTale</p>
     
 
-    <button style="position: fixed; top: 45%; left: calc(50% - 170px);"
-        onclick="location.href='../intoStory/storyList.jsp'">동화</button>
-	<button style="position: fixed; top: 45%; right: calc(50% - 170px);"
-        onclick="location.href='../simulator/index.html'">스토리</button>
+    <button  class="transparent-button" style="position: fixed; top: 35%; left: calc(50% - 230px);"
+        onclick="location.href='../intoStory/storyList.jsp'">
+        <img src="fairy.png" alt="동화" style="width: 100px; height: 100px;">
+        <p style="color:#026873; font-size:20px; font-weight:700;">동화</p>
+        </button>
+	<button  class="transparent-button" style="position: fixed; top: 35%; right: calc(50% - 230px);"
+        onclick="location.href='../simulator/index.html'">
+        <img src="story.png" alt="스토리" style="width: 100px; height: 100px;">
+        <p style="color:#026873; font-size:20px; font-weight:700;">스토리</p>
+        </button>
     
     <%-- 세션이 없으면 로그인 페이지로 이동 --%>
     <% if(session.getAttribute("id") == null) { %>
