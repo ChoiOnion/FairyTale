@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'TTHakgyoansimRikodeoR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimRikodeoR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.green{
+  color: #026873; 
+}
+
+body{
+	font-family:"TTHakgyoansimRikodeoR";
+	font-size:20px;
+	font-weight:400;
+	background-color: #FCFBED; 
+}
+
+input{
+	
+    	font-family: 'TTHakgyoansimRikodeoR';
+    	border: 2px solid #026873;
+        padding: 10px 10px;
+        font-size: 14px;
+        margin: 4px 2px;
+        border-radius: 10px;
+}
+
+button{
+	
+    	font-family: 'TTHakgyoansimRikodeoR';
+}
+
+.transparent-button {
+	
+    	font-family: 'TTHakgyoansimRikodeoR';
+            background-color: transparent;
+            color: #026873;
+            border: 2px solid #026873;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .transparent-button:hover {
+            background-color: #026873;
+            color: white;
+        }
+
+        .transparent-button:active {
+            background-color: #026873;
+            color: white;
+        }
