@@ -39,17 +39,17 @@
 <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.7); border-radius: 10px; padding: 20px; width: fit-content; text-align: center; display: flex; justify-content: space-between;">
    <button class="transparent-button" onclick="location.href='word.jsp'">
         <img src="word.png" alt="단어" style="width: 100px; height: 100px;">
-        <p style="color:#026873; font-size:20px; font-weight:700;">단어</p>
+        <p style="color:#026873; font-size:20px; font-weight:700;">단어 맞히기</p>
     </button>
 
-    <button class="transparent-button" onclick="location.href='proverb.jsp'">
-        <img src="proverb.png" alt="속담" style="width: 100px; height: 100px;">
-        <p style="color:#026873; font-size:20px; font-weight:700;">속담</p>
+    <button class="transparent-button" onclick="location.href='sentence.jsp'">
+        <img src="sentence.png" alt="문장" style="width: 100px; height: 100px;">
+        <p style="color:#026873; font-size:20px; font-weight:700;">문장 완성하기</p>
     </button>
 
     <button class="transparent-button" onclick="location.href='blank.jsp'">
         <img src="blank.png" alt="빈칸" style="width: 100px; height: 100px;">
-        <p style="color:#026873; font-size:20px; font-weight:700;">빈칸</p>
+        <p style="color:#026873; font-size:20px; font-weight:700;">속담 빈칸 채우기</p>
     </button>
 </div>
 
@@ -58,7 +58,7 @@
     <% if(session.getAttribute("id") == null) { %>
         <script>
             alert("로그인이 필요합니다.");
-            location.href='login.jsp';
+            location.href='../main/login.jsp';
         </script>
     <% } %>
 </body>

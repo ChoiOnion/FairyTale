@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>단어 맞히기</title>
+    <title>속담 빈칸 채우기</title>
     <link rel="stylesheet" href="style.css">
     <style>
     @font-face {
@@ -47,14 +47,14 @@
      }
      </style>
     <script>
-        function loadNewWord() {
+        function loadNewBlank() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("word").innerHTML = this.responseText;
+                    document.getElementById("blank").innerHTML = this.responseText;
                 }
             };
-            xhttp.open("GET", "getWord.jsp", true);
+            xhttp.open("GET", "getBlank.jsp", true);
             xhttp.send();
         }
         
@@ -65,16 +65,16 @@
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("result").innerHTML = this.responseText;
                     document.getElementById("userInput").value = "";
-                    loadNewWord();
+                    loadNewBlank();
                 }
             };
-            xhttp.open("POST", "checkWord.jsp", true);
+            xhttp.open("POST", "checkBlank.jsp", true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("userInput=" + userInput);
         }
         
         window.onload = function() {
-            loadNewWord();
+        	loadNewBlank();
         };
     </script>
 </head>
@@ -84,16 +84,18 @@
             top: 20px;
             left: 20px;">이전 화면</button>
 
-    <h2 style="color: #4E4742;">단어 맞히기 게임</h2>
+    <h2 style="color: #4E4742;">속담 빈칸 채우기 게임</h2>
     <br>
     <div id="game">
-      <div id="word" style="text-align: center;"></div>
+      <div id="blank" style="text-align: center;"></div>
+      
+    	</div>
+    	<div id="game">
     		<form onsubmit="event.preventDefault(); checkAnswer();">
         		<input type="text" id="userInput" style="width: 200px;" placeholder="알맞은 영어 단어를 입력하세요." required>
         		<button  class="transparent-button" type="submit">확인</button>
     		</form>
     	</div>
-    	
     <div id="result"></div>
     
         <%-- 세션이 없으면 로그인 페이지로 이동 --%>
