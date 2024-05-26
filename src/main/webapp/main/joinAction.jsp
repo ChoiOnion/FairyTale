@@ -20,10 +20,11 @@
 </head>
 <body>
     <%
-        String url = "jdbc:mysql://localhost:3306/fairytale";
+        String url = "jdbc:mysql://localhost:3306/fairytale?useUnicode=true&characterEncoding=utf8";
         String usernameDB = "root";
         String passwordDB = "1234";
         
+        request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
         String pwd = request.getParameter("pwd");
         String name = request.getParameter("name");
