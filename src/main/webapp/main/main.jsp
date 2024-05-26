@@ -53,7 +53,7 @@
 <body>
     <div>
         <!-- 사용자 ID 표시 -->
-        <div style="position: fixed; top: 38%; left: 555px; color:#615B57; text-align: center;">
+        <div style="position: fixed; top: 38%; left: 560px; color:#615B57; text-align: center;">
             <% String username = (String) session.getAttribute("username"); %>
             <p class="underline">어서오세요</p>
             <p class="underline"><%= username %> 님.</p>
@@ -65,7 +65,7 @@
     <p class="shadow-text">FairyTale</p>
     
     <!-- 버튼 재정렬 -->
-    <div style="position: fixed; top: 38%; right: calc(50% - 175px); text-align: center;">
+    <div style="position: fixed; top: 38%; right: calc(50% - 185px); text-align: center;">
         <p class="underline"><a href="../game/gameMain.jsp">Game</a></p>
         <p class="underline"><a href="../intoStory/storyList.jsp">Fairytale</a></p>
         <p class="underline"><a href="../simulator/story.jsp">Story</a></p>
