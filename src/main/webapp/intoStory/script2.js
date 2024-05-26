@@ -1,6 +1,7 @@
 const typingText = document.querySelector(".typing-text p"),
 inpField = document.querySelector(".wrapper .input-field"),
-tryAgainBtn = document.querySelector(".content button"),
+tryAgainBtn = document.querySelector(".content .try"),
+next = document.querySelector(".content .next"),
 timeTag = document.querySelector(".time span b"),
 mistakeTag = document.querySelector(".mistake span"),
 wpmTag = document.querySelector(".wpm span"),
@@ -11,10 +12,13 @@ maxTime = 60,
 timeLeft = maxTime,
 charIndex = mistakes = isTyping = 0;
 
-function loadParagraph() {
-    const ranIndex = Math.floor(Math.random() * paragraphs.length);
+var progress = 0;
+
+function loadParagraph(num) {
+//현재 progress를 가져오는 것이 필요
+	
     typingText.innerHTML = "";
-    paragraphs[ranIndex].split("").forEach(char => {
+    paragraphs[num].split("").forEach(char => {
         let span = `<span>${char}</span>`
         typingText.innerHTML += span;
     });
@@ -75,7 +79,7 @@ function initTimer() {
 }
 
 function resetGame() {
-    loadParagraph();
+    loadParagraph(progress);
     clearInterval(timer);
     timeLeft = maxTime;
     charIndex = mistakes = isTyping = 0;
@@ -86,6 +90,11 @@ function resetGame() {
     cpmTag.innerText = 0;
 }
 
-loadParagraph();
-inpField.addEventListener("input", initTyping);
-tryAgainBtn.addEventListener("click", resetGame);
+function nextPara(){
+	progress++;
+	if(progress>=paragraphs.length){
+		progress = 0;
+	}
+	console.log("length: ", paragraphs.length);
+	resetGame();
+}

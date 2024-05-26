@@ -7,58 +7,21 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page import="com.google.gson.Gson" %>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">  
-    <title>Typing Speed Test Game</title>
-    <link rel="stylesheet" href="style2.css?after">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="wrapper">
-      <input type="text" class="input-field">
-      <div class="content-box">
-        <div class="typing-text">
-          <p></p>
-        </div>
-        <div class="content">
-          <ul class="result-details">
-            <li class="time">
-              <p>Time Left:</p>
-              <span><b>60</b>s</span>
-            </li>
-            <li class="mistake">
-              <p>Mistakes:</p>
-              <span>0</span>
-            </li>
-            <li class="wpm">
-              <p>WPM:</p>
-              <span>0</span>
-            </li>
-            <li class="cpm">
-              <p>CPM:</p>
-              <span>0</span>
-            </li>
-          </ul>
-          <button>Try Again</button>
-        </div>
-      </div>
-    </div>
-<!--     <script src="script_context.js"></script> -->
-	<script>
-	console.log("what")
-	<% 
-	//임시 세션 설정
+<%
+//임시 세션 설정
 	HttpSession userSession  = request.getSession();
-    userSession.setAttribute("id", "321");
+ 	userSession.setAttribute("id", "321");
+	//
 	
 	Class.forName("com.mysql.jdbc.Driver");
 	String db_address = "jdbc:mysql://localhost:3306/fairytale";
 	String db_username = "root";
 	String db_pwd = "1234";
-            
+	
 	Connection connection = DriverManager.getConnection(db_address, db_username, db_pwd);
+	
+	PreparedStatement psmt;
+	ResultSet result;
 	
 	String title = request.getParameter("title");
 	String id = (String)session.getAttribute("id");
@@ -66,10 +29,10 @@
 			
 	//만약 저장된 내용이 없다면 새로 가져와야함
 	String findSave = "SELECT progress from fairytale_user WHERE id=? AND title=?";
-	PreparedStatement psmt = connection.prepareStatement(findSave);
+	psmt = connection.prepareStatement(findSave);
 	psmt.setString(1, id);
 	psmt.setString(2, title);
-	ResultSet result = psmt.executeQuery();
+	result = psmt.executeQuery();
 	if (result.next()) {
         progress = result.getInt("progress"); // 쿼리 결과가 있다면 progress 값 설정
     }
@@ -93,10 +56,54 @@
     }
     
     String jsonParagraphs = new Gson().toJson(paragraphs);
-	%>	
-	const paragraphs = <%= jsonParagraphs %>;
-	console.log("Paragraphs: ", paragraphs);
-	</script>
+    
+    int temp = progress-1;
+    
+%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">  
+    <title>Typing Speed Test Game</title>
+    <link rel="stylesheet" href="style2.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <input type="text" class="input-field">
+      <div class="content-box">
+        <div class="typing-text">
+          <p></p>
+        </div>
+        <div class="content">
+          <ul class="result-details">
+            <li class="time">
+              <p>Left:</p>
+              <span><b>60</b>s</span>
+            </li>
+            <li class="mistake">
+              <p>Mistakes:</p>
+              <span>0</span>
+            </li>
+            <li class="wpm">
+              <p>WPM:</p>
+              <span>0</span>
+            </li>
+            <li class="cpm">
+              <p>CPM:</p>
+              <span>0</span>
+            </li>
+          </ul>
+          <button class="try" onclick="resetGame()">Again</button>
+          <button class="next" onclick="nextPara()">Next</button>
+        </div>
+      </div>
+    </div>
+	<script> const paragraphs = <%= jsonParagraphs %>;console.log("Paragraphs: ", paragraphs);</script>
     <script src="script2.js"></script>
+    <script>
+    loadParagraph(<%= temp%>);
+    inpField.addEventListener("input", initTyping);
+    </script>
   </body>
 </html>
