@@ -19,15 +19,16 @@
         background-attachment: fixed;
         }
      .shadow-text {
-        color: #615B57;
+        color: #FAE1AF;
         font-size: 45px;
         font-weight: 700;
         text-align: center;
-        margin-top: 185px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-top: 150px;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
      }
      .underline {
         position: relative;
+        font-size: 24px;
      }
      .underline::after {
         content: "";
@@ -40,7 +41,7 @@
      }
      .underline a {
         color: #026873;
-        font-size: 20px;
+        font-size: 28px;
         font-weight: 700;
         text-decoration: none;
         position: relative;
@@ -53,11 +54,11 @@
 <body>
     <div>
         <!-- 사용자 ID 표시 -->
-        <div style="position: fixed; top: 38%; left: 560px; color:#615B57; text-align: center;">
+        <div style="position: fixed; top: 35%; right: calc(50% - 230px); color:#615B57; text-align: center;">
             <% String username = (String) session.getAttribute("username"); %>
             <p class="underline">어서오세요</p>
-            <p class="underline"><%= username %> 님.</p>
-            <button class="transparent-button" style="padding: 8px 16px; font-size: 12px;" onclick="location.href='logoutAction.jsp'">로그아웃</button>
+            <p class="underline"><%= username %> 님.</p><br>
+            <button class="transparent-button" style="padding: 8px 16px; font-size: 16px;" onclick="location.href='logoutAction.jsp'">로그아웃</button>
         </div>
     </div>
     
@@ -65,10 +66,10 @@
     <p class="shadow-text">FairyTale</p>
     
     <!-- 버튼 재정렬 -->
-    <div style="position: fixed; top: 38%; right: calc(50% - 185px); text-align: center;">
+    <div style="position: fixed; top: 30%; left: calc(50% - 220px); text-align: center;">
+        <p class="underline"><a href="../intoStory/storyList.jsp">Fairytale</a></p><br>
+        <p class="underline"><a href="../simulator/story.jsp">Story</a></p><br>
         <p class="underline"><a href="../game/gameMain.jsp">Game</a></p>
-        <p class="underline"><a href="../intoStory/storyList.jsp">Fairytale</a></p>
-        <p class="underline"><a href="../simulator/story.jsp">Story</a></p>
     </div>
     
     <%-- 세션이 없으면 로그인 페이지로 이동 --%>
