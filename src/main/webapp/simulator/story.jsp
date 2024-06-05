@@ -85,7 +85,7 @@
             // Check if session ID is null and handle encoding
             if (id == null) {
                 out.println("<h2>Session ID is null. Please log in.</h2>");
-                out.println("<script>location.href='login.jsp';</script>");
+                out.println("<script>location.href='../main/login.jsp';</script>");
             } else {
                 // username의 인코딩을 변환하지 않음
                 out.println("<div class='welcome-message'>어서오세요, " + username + " 님.</div>");
@@ -98,15 +98,15 @@
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection(url, usernameDB, passwordDB);
 
-                String sql = "SELECT story_progress, story_friendship FROM user WHERE id=?";
+                String sql = "SELECT progress, friendship FROM story_user WHERE id=?";
                 pstmt = conn.prepareStatement(sql);
                 pstmt.setString(1, id);
 
                 ResultSet rs = pstmt.executeQuery();
 
                 if (rs.next()) {
-                    String storyProgress = rs.getString("story_progress");
-                    int storyFriendship = rs.getInt("story_friendship");
+                    String storyProgress = rs.getString("progress");
+                    int storyFriendship = rs.getInt("friendship");
 
                     if (storyProgress != null && storyFriendship != 0) {
                         out.println("<div class='game-data'>현재 진행도: " + storyProgress + "</div>");
@@ -137,8 +137,8 @@
     </div>
     <script>
         function loadGame() {
-            localStorage.setItem('story_progress', savedBranch);
-            localStorage.setItem('story_friendship', savedFriendship);
+            localStorage.setItem('progress', savedBranch);
+            localStorage.setItem('friendship', savedFriendship);
             location.href = 'index.html';
         }
     </script>

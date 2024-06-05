@@ -27,17 +27,18 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 
-        String sql = "SELECT story_progress, story_friendship FROM user WHERE id = ?";
+        String sql = "SELECT progress, friendship FROM story_user WHERE id = ?";
         preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, userId);
         resultSet = preparedStatement.executeQuery();
-
+        
+        
         if (resultSet.next()) {
-            String storyProgress = resultSet.getString("story_progress");
-            int storyFriendship = resultSet.getInt("story_friendship");
+            String storyProgress = resultSet.getString("progress");
+            int storyFriendship = resultSet.getInt("friendship");
 
             response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write("{\"story_progress\": \"" + storyProgress + "\", \"story_friendship\": " + storyFriendship + "}");
+            response.getWriter().write("{\"progress\": \"" + storyProgress + "\", \"friendship\": " + storyFriendship + "}");
         } else {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("{\"error\": \"Failed to load progress.\"}");

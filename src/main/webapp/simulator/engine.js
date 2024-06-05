@@ -259,8 +259,8 @@ class TextGame {
         }
 
         const data = new URLSearchParams({
-            story_progress: branch,
-            story_friendship: friendship.toString(), // Ensure friendship is a string
+            progress: branch,
+            friendship: friendship.toString(), // Ensure friendship is a string
             story_page_index: pageIndex.toString() // Save the current page index
         });
 
@@ -286,9 +286,9 @@ class TextGame {
         }).then(response => response.json())
         .then(data => {
             console.log("Loaded data:", data);
-            if (data && data.story_progress && data.story_friendship !== undefined) {
-                this._currentBranch = this._branchManager.getBranch(data.story_progress);
-                this._friendship = parseInt(data.story_friendship, 10);
+            if (data && data.progress && data.friendship !== undefined) {
+                this._currentBranch = this._branchManager.getBranch(data.progress);
+                this._friendship = parseInt(data.friendship, 10);
 
                 // Ensure the current branch and page index are valid before starting
                 if (this._currentBranch) {
@@ -307,7 +307,7 @@ class TextGame {
                         }
                     }
                 } else {
-                    console.error("Current branch not found:", data.story_progress);
+                    console.error("Current branch not found:", data.progress);
                 }
 
                 this.startFromCurrentPage();

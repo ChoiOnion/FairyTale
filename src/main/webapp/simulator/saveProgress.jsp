@@ -21,12 +21,12 @@
     }
 
     // Read the request parameters
-    String storyProgress = request.getParameter("story_progress");
-    String storyFriendshipParam = request.getParameter("story_friendship");
+    String storyProgress = request.getParameter("progress");
+    String storyFriendshipParam = request.getParameter("friendship");
 
     // Debug logs for received parameters
-    System.out.println("Received story_progress: " + storyProgress);
-    System.out.println("Received story_friendship: " + storyFriendshipParam);
+    System.out.println("Received progress: " + storyProgress);
+    System.out.println("Received friendship: " + storyFriendshipParam);
 
     if (storyProgress == null || storyFriendshipParam == null) {
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -40,7 +40,7 @@
         storyFriendship = Integer.parseInt(storyFriendshipParam);
     } catch (NumberFormatException e) {
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        response.getWriter().write("Invalid story_friendship parameter.");
+        response.getWriter().write("Invalid friendship parameter.");
         return;
     }
 
@@ -50,7 +50,7 @@
         Class.forName("com.mysql.cj.jdbc.Driver");
         connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 
-        String sql = "UPDATE user SET story_progress = ?, story_friendship = ? WHERE id = ?";
+        String sql = "UPDATE story_user SET progress = ?, friendship = ? WHERE id = ?";
         preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setString(1, storyProgress);
         preparedStatement.setInt(2, storyFriendship);
