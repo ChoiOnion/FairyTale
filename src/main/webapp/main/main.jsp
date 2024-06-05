@@ -19,26 +19,26 @@
         background-attachment: fixed;
     }
     .shadow-text {
-        color: #615B57;
+        color: #FAE1AF;
         font-size: 45px;
         font-weight: 700;
         text-align: center;
-        margin-top: 185px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-top: 150px;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
     }
 
     /* Button Styles */
     .type--A{
       --line_color: #555555;
-      --back_color: #FFECF6;
+      --back_color: #c8f3d0;
     }
     .type--B{
-      --line_color: #1b1919;
-      --back_color: #E9ECFF;
+      --line_color: #555555;
+      --back_color: #eff3c8;
     }
     .type--C{
-      --line_color: #00135C;
-      --back_color: #DEFFFA;
+      --line_color: #555555;
+      --back_color: #e0f3c8;
     }
     .button{
         position: relative;
@@ -46,7 +46,7 @@
         width: 240px;
         height: 56px;
         text-decoration: none;
-        font-size: 14px; 
+        font-size: 20px; 
         font-weight: bold;
         color: var(--line_color);
         letter-spacing: 2px;
@@ -253,31 +253,31 @@
 <body>
     <div>
         <!-- 사용자 ID 표시 -->
-        <div style="position: fixed; top: 39%; left: 560px; color:#615B57; text-align: center;">
+        <div style="position: fixed; top: 35%;left: calc(50% - 220px); color:#615B57; text-align: center;">
             <% String username = (String) session.getAttribute("username"); %>
-            <p>어서오세요</p>
-            <p><%= username %> 님.</p>
-            <button class="transparent-button" style="padding: 8px 16px; font-size: 12px;" onclick="location.href='logoutAction.jsp'">로그아웃</button>
+            <p style="font-size: 24px">어서오세요</p>
+            <p style="font-size: 24px"><%= username %> 님.</p>
+            <button class="transparent-button" style="padding: 8px 16px; font-size: 18px;" onclick="location.href='logoutAction.jsp'">로그아웃</button>
         </div>
     </div>
     
     <!-- 책 제목 정렬 -->
-    <p class="shadow-text" style="position: fixed; top: 1%; left: 660px; color:#615B57; text-align: center;" >FairyTale</p>
+    <p class="shadow-text">FairyTale</p>
     
     <!-- 버튼 재정렬 -->
-    <div style="position: fixed; top: 37%; right: calc(50% - 260px); text-align: center;"> <!-- Moved slightly to the right -->
-        <a href="../game/gameMain.jsp" class="button type--A">
-            <span class="button__text">Game</span>
-            <div class="button__drow1"></div>
-            <div class="button__drow2"></div>
-        </a>
+    <div style="position: fixed; top: 35%;  right: calc(50% - 270px); text-align: center;">
         <a href="../intoStory/storyList.jsp" class="button type--B">
-            <span class="button__text">Fairytale</span>
+            <span class="button__text">FairyTale</span>
             <div class="button__drow1"></div>
             <div class="button__drow2"></div>
         </a>
         <a href="../simulator/story.jsp" class="button type--C">
             <span class="button__text">Story</span>
+            <div class="button__drow1"></div>
+            <div class="button__drow2"></div>
+        </a>
+        <a href="../game/gameMain.jsp" class="button type--A">
+            <span class="button__text">Game</span>
             <div class="button__drow1"></div>
             <div class="button__drow2"></div>
         </a>
