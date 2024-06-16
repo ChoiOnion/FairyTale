@@ -2,6 +2,16 @@ body {
 	background: #FCFBED;
 	font-family: 'Montserrat', sans-serif;
 }
+svg{
+	left: 20px; /* 왼쪽에서 20px 떨어짐 */
+	position: fixed; /* 고정 위치 */
+    left: 20px; /* 왼쪽에서 20px 떨어지게 설정 */
+    top: 50%; /* 화면 높이의 중앙 */
+    transform: translateY(-50%);
+}
+svg:hover {
+        fill: rgb(107, 218, 196); /* 마우스를 올렸을 때 색상 */
+}
 .title{
   font-family: 'Jost';
   font-weight: 600;

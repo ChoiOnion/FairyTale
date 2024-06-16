@@ -67,8 +67,20 @@
     <title>Typing Speed Test Game</title>
     <link rel="stylesheet" href="style2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back(); // 뒤로 가기
+        });
+    });
+    </script>
   </head>
   <body>
+  
+	<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16" id="backButton">
+        <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+    </svg>
+    
     <div class="wrapper">
       <input type="text" class="input-field">
       <div class="content-box">
